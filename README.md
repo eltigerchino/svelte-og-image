@@ -14,7 +14,7 @@ export function GET() {
 ```
 
 > [!WARNING]
-> Certain CSS features such as CSS variables and `display: grid;`` are not compatible with Satori.
+> Certain CSS features such as CSS variables and `display: grid;` are not compatible with Satori.
 > Read the [Satori documentation](https://github.com/vercel/satori#css) for more info.
 
 ## Acknowledgements
