@@ -1,6 +1,6 @@
 {
 	"name": "svelte-og-image",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"license": "MIT",
 	"author": {
 		"name": "Chew Tee Ming",
@@ -37,6 +37,8 @@
 		"!dist/**/*.spec.*"
 	],
 	"peerDependencies": {
+		"@vercel/og": "^0.6.2",
+		"satori-html": "^0.3.2",
 		"svelte": "^4.0.0"
 	},
 	"devDependencies": {
@@ -55,6 +57,7 @@
 		"prettier": "^3.2.2",
 		"prettier-plugin-svelte": "^3.1.2",
 		"publint": "^0.2.7",
+		"satori": "^0.10.11",
 		"satori-html": "^0.3.2",
 		"svelte": "^4.2.8",
 		"svelte-check": "^3.6.3",
@@ -65,10 +68,5 @@
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module",
-	"pnpm": {
-		"patchedDependencies": {
-			"@vercel/og@0.6.2": "patches/@vercel__og@0.6.2.patch"
-		}
-	}
+	"type": "module"
 }

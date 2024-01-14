@@ -1,8 +1,9 @@
 // Thanks to https://geoffrich.net/posts/svelte-social-image/
 
-import { ImageResponse, type ImageResponseOptions } from '@vercel/og';
+import { ImageResponse as VercelOGImageResponse } from '@vercel/og';
 import { html } from 'satori-html';
 import type { ComponentProps, ComponentType, SvelteComponent } from 'svelte';
+import type { ImageResponseOptions } from './types.js';
 
 // https://svelte.dev/docs/typescript#types
 
@@ -16,22 +17,24 @@ export interface SvelteComponentSSR<T extends SvelteComponent> {
 
 export interface SvelteRenderResult {
 	html: string;
-	css: { code: string; map: null };
+	css: {
+		code: string;
+		// TODO: what is css.map for???
+		map: null;
+	};
 	head: string;
 }
 
-export function renderOGImage<T extends SvelteComponent>(
-	component: ComponentType<T>,
-	props: ComponentProps<T>,
-	options?: ImageResponseOptions
-) {
-	// @ts-expect-error - Svelte types are not up to date
-	// see https://svelte.dev/docs/server-side-component-api
-	const result = (component as SvelteComponentSSR<T>).render(props);
-
-	// Thanks to https://github.com/natemoo-re/satori-html
-	const element = html(`${result.html}<style>${result.css.code}</style>`);
-
-	// Thanks to https://github.com/vercel/satori
-	return new ImageResponse(element, options);
+export class ImageResponse<T extends SvelteComponent> extends VercelOGImageResponse {
+	constructor(
+		component: ComponentType<T>,
+		props: ComponentProps<T>,
+		options?: ImageResponseOptions
+	) {
+		// @ts-expect-error - Svelte types are not up to date
+		// see https://svelte.dev/docs/server-side-component-api
+		const result = (component as SvelteComponentSSR<T>).render(props);
+		const element = html(`${result.html}<style>${result.css.code}</style>`);
+		super(element, options);
+	}
 }
