@@ -2,6 +2,15 @@
 	"name": "svelte-og-image",
 	"version": "0.0.1",
 	"license": "MIT",
+	"author": {
+		"name": "Chew Tee Ming",
+		"email": "chewteeming01@gmail.com",
+		"url": "https://github.com/eltigerchino"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/eltigerchino/svelte-og-image"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",

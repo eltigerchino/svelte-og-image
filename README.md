@@ -1,6 +1,6 @@
 # svelte-og-image
 
-A wrapper around [`@vercel/og`](https://www.npmjs.com/package/@vercel/og) for use in Svelte projects.
+A simple wrapper around [`@vercel/og`](https://www.npmjs.com/package/@vercel/og) for use in Svelte projects.
 
 ```ts
 // src/routes/og/+server.js
