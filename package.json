@@ -1,5 +1,5 @@
 {
-	"name": "sveltekit-og",
+	"name": "svelte-og-image",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "vite dev",
