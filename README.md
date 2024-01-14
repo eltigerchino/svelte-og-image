@@ -1,7 +1,16 @@
 # svelte-og-image
 
-A simple wrapper around [`@vercel/og`](https://www.npmjs.com/package/@vercel/og) for use in Svelte projects.
-Just import your Svelte component and pass in values to its props.
+A simple wrapper around [`@vercel/og`](https://www.npmjs.com/package/@vercel/og) for use in Svelte projects. Just import your Svelte component and pass in values to its props.
+
+## Installation
+
+```bash
+pnpm i -D svelte-og-image
+```
+
+## Usage
+
+If you're using [SvelteKit](https://kit.svelte.dev), create an API route that exposes a GET function. Then, import the `renderOGImage` method and the Svelte component you wish to render as an image.
 
 ```ts
 // src/routes/og/+server.js
@@ -9,7 +18,7 @@ import { renderOGImage } from 'svelte-og-image';
 import Card from '$lib/Card.svelte';
 
 export function GET() {
-	return renderOGImage<Card>(Card, { title: 'Hello world!' });
+  return renderOGImage<Card>(Card, { title: 'Hello world!' });
 }
 ```
 
