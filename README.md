@@ -1,7 +1,7 @@
 # svelte-og-image
 
 A simple wrapper around [`@vercel/og`](https://www.npmjs.com/package/@vercel/og) for use in Svelte projects.
-Just import your Svelte component and pass in any props that it accepts.
+Just import your Svelte component and pass in values to its props.
 
 ```ts
 // src/routes/og/+server.js
