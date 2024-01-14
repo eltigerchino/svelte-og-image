@@ -1,0 +1,57 @@
+diff --git a/dist/index.edge.d.ts b/dist/index.edge.d.ts
+index 6d0ad0c1d514d096d515f97d1975bb60072808ca..f6d5a5075c8d3cbc0966976631f5ebda26a744c2 100644
+--- a/dist/index.edge.d.ts
++++ b/dist/index.edge.d.ts
+@@ -1,7 +1,10 @@
+-import type { ReactElement } from 'react';
+-import type { ImageResponseOptions, FigmaImageResponseProps } from './types';
++import type { ReactElement } from "react";
++import type { ImageResponseOptions, FigmaImageResponseProps } from "./types";
+ export declare class ImageResponse extends Response {
+-    constructor(element: ReactElement, options?: ImageResponseOptions);
++  constructor(element: ReactElement, options?: ImageResponseOptions);
+ }
+-export declare const experimental_FigmaImageResponse: (props: FigmaImageResponseProps) => Promise<ImageResponse>;
++export type { ImageResponseOptions };
++export declare const experimental_FigmaImageResponse: (
++  props: FigmaImageResponseProps
++) => Promise<ImageResponse>;
+ export declare type EdgeImageResponse = typeof ImageResponse;
+diff --git a/dist/index.node.d.ts b/dist/index.node.d.ts
+index a8162af59169cda5fc57495591b6453419c713c7..d4123a2d43aa342b46630a71983db476eff110d7 100644
+--- a/dist/index.node.d.ts
++++ b/dist/index.node.d.ts
+@@ -1,10 +1,15 @@
+ /// <reference types="node" />
+-import type { ReactElement } from 'react';
+-import type { ImageResponseNodeOptions, ImageResponseOptions, FigmaImageResponseProps } from './types';
+-import { Readable } from 'stream';
++import type { ReactElement } from "react";
++import type {
++  ImageResponseNodeOptions,
++  ImageResponseOptions,
++  FigmaImageResponseProps,
++} from "./types";
++import { Readable } from "stream";
+ export declare class ImageResponse extends Response {
+-    constructor(element: ReactElement, options?: ImageResponseOptions);
++  constructor(element: ReactElement, options?: ImageResponseOptions);
+ }
++export type { ImageResponseOptions };
+ /**
+  * Creates a pipeable stream of the rendered image in a lambda function.
+  * All parameters are the same as `ImageResponse`.
+@@ -22,6 +27,11 @@ export declare class ImageResponse extends Response {
+  * }
+  * ```
+  */
+-export declare function unstable_createNodejsStream(element: ReactElement, options?: Omit<ImageResponseNodeOptions, 'status' | 'statusText' | 'headers'>): Promise<Readable>;
+-export declare const experimental_FigmaImageResponse: (props: FigmaImageResponseProps) => Promise<import("./index.edge").ImageResponse>;
++export declare function unstable_createNodejsStream(
++  element: ReactElement,
++  options?: Omit<ImageResponseNodeOptions, "status" | "statusText" | "headers">
++): Promise<Readable>;
++export declare const experimental_FigmaImageResponse: (
++  props: FigmaImageResponseProps
++) => Promise<import("./index.edge").ImageResponse>;
+ export declare type NodeImageResponse = typeof ImageResponse;
