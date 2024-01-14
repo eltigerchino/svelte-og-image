@@ -1,19 +1,20 @@
 # svelte-og-image
 
 A simple wrapper around [`@vercel/og`](https://www.npmjs.com/package/@vercel/og) for use in Svelte projects.
+Just import your Svelte component and pass in any props that it accepts.
 
 ```ts
 // src/routes/og/+server.js
 import { renderOGImage } from 'svelte-og-image';
-
-// import your Svelte component
 import Card from '$lib/Card.svelte';
 
 export function GET() {
-	// pass the Svelte component and any props the component accepts
 	return renderOGImage<Card>(Card, { title: 'Hello world!' });
 }
 ```
+
+> Note that certain CSS features are not compatible with Satori.
+> See https://github.com/vercel/satori#css
 
 ## Acknowledgements
 
