@@ -1,6 +1,6 @@
 <!-- Thanks to https://geoffrich.net/posts/svelte-social-image/ -->
 <script lang="ts">
-	import logo from './logo.svg?raw';
+	import logo from './svelte-logo.svg?raw';
 
 	export let title: string;
 </script>
@@ -13,6 +13,13 @@
 </div>
 
 <style>
+	@font-face {
+		font-family: 'Overpass';
+		font-style: normal;
+		font-weight: 600;
+		src: url('./overpass-v13-latin-600.woff') format('woff');
+	}
+
 	.card {
 		display: flex; /** required by satori */
 		flex-direction: column;
@@ -24,6 +31,11 @@
 		align-items: center;
 		justify-content: center;
 		text-align: center;
+	}
+
+	h1 {
+		font-family: Overpass, 'Overpass';
+		font-weight: 600;
 	}
 
 	.logo {
