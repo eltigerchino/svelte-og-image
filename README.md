@@ -15,12 +15,27 @@ If you're using [SvelteKit](https://kit.svelte.dev), create an API route that ex
 ```js
 // src/routes/og/+server.js
 import { ImageResponse } from 'svelte-og-image';
-import Card from '$lib/Card.svelte';
+import Card from './Card.svelte';
 
 export function GET () {
-  // optionally pass in an `options` object as a third argument
-  // see https://www.npmjs.com/package/@vercel/og#api-reference
-  return new ImageResponse(Card, { title: 'Hello world!' });
+ const response = await fetch('/overpass-v13-latin-600.woff');
+
+ const fontData = await response.arrayBuffer();
+
+ return new ImageResponse(
+  Card,
+  { title },
+  {
+   fonts: [
+    {
+     name: 'Overpass',
+     data: Buffer.from(fontData),
+     weight: 600,
+     style: 'normal'
+    }
+   ]
+  }
+ );
 }
 ```
 
