@@ -1,13 +1,13 @@
 import { ImageResponse } from '$lib/index.js';
 import Card from './Card.svelte';
-import Overpass from './overpass-v13-latin-600.ttf';
+import Noto from './noto-sans-v27-latin-regular.ttf';
 
 export async function GET({ url, fetch }) {
 	const title =
 		url.searchParams.get('title') || 'missing `title` in URL query string. e.g., /og?title=example';
 
-	const response = await fetch(Overpass);
-	const overpass = await response.arrayBuffer();
+	const response = await fetch(Noto);
+	const font = await response.arrayBuffer();
 
 	return new ImageResponse(
 		Card,
@@ -15,8 +15,8 @@ export async function GET({ url, fetch }) {
 		{
 			fonts: [
 				{
-					name: 'Overpass',
-					data: Buffer.from(overpass),
+					name: 'Noto',
+					data: Buffer.from(font),
 					weight: 600,
 					style: 'normal'
 				}
