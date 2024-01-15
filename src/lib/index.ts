@@ -32,7 +32,7 @@ export async function createImageResponse<T extends SvelteComponent>(
 	try {
 		new Resvg('<svg xmlns="http://www.w3.org/2000/svg"></svg>');
 	} catch {
-		await initWasm(await fetch(resvgWasmUrl));
+		await initWasm(await options.fetch(resvgWasmUrl));
 	}
 
 	const resvg = new Resvg(svg, {
