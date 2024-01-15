@@ -11,6 +11,17 @@
 		"type": "git",
 		"url": "https://github.com/eltigerchino/svelte-og-image"
 	},
+	"keywords": [
+		"svelte",
+		"og",
+		"image",
+		"sveltekit",
+		"svelte-kit",
+		"svelte-og-image",
+		"@vercel/og",
+		"satori",
+		"satori-html"
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
