@@ -17,7 +17,7 @@
 		font-family: 'Noto';
 		font-style: normal;
 		font-weight: 600;
-		src: url('./noto-sans-v27-latin-regular.ttf') format('woff');
+		src: url('./noto-sans-v27-latin-regular.ttf') format('truetype');
 	}
 
 	.card {
