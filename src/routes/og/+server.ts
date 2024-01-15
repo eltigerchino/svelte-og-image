@@ -1,6 +1,6 @@
 import { ImageResponse } from '$lib/index.js';
 import Card from './Card.svelte';
-import Overpass from './overpass-v13-latin-600.woff';
+import Overpass from './overpass-v13-latin-600.ttf';
 
 export async function GET({ url, fetch }) {
 	const title =
