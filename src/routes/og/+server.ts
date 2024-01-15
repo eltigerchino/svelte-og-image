@@ -1,4 +1,4 @@
-import { ImageResponse } from '$lib/index.js';
+import { createImageResponse } from '$lib/index.js';
 import Card from './Card.svelte';
 
 export async function GET({ url, fetch }) {
@@ -8,7 +8,7 @@ export async function GET({ url, fetch }) {
 	const response = await fetch('/overpass-v13-latin-600.woff');
 
 	const overpass = await response.arrayBuffer();
-	return new ImageResponse(
+	return createImageResponse(
 		Card,
 		{ title },
 		{
@@ -19,7 +19,8 @@ export async function GET({ url, fetch }) {
 					weight: 600,
 					style: 'normal'
 				}
-			]
+			],
+			fetch
 		}
 	);
 }
