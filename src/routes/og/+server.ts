@@ -1,4 +1,4 @@
-import { ImageResponse } from '$lib/vercel.js';
+import { ImageResponse } from '$lib/index.js';
 import Card from './Card.svelte';
 import Overpass from './overpass-v13-latin-600.woff';
 
