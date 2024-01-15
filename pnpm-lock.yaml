@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   '@vercel/og@0.6.2':
-    hash: ayosv2xfcrzqek2fhic35qjoxm
+    hash: uteknbvbxliojsyifh2gdsf2oi
     path: patches/@vercel__og@0.6.2.patch
 
 devDependencies:
@@ -42,7 +42,7 @@ devDependencies:
     version: 6.18.1(eslint@8.56.0)(typescript@5.3.3)
   '@vercel/og':
     specifier: ^0.6.2
-    version: 0.6.2(patch_hash=ayosv2xfcrzqek2fhic35qjoxm)
+    version: 0.6.2(patch_hash=uteknbvbxliojsyifh2gdsf2oi)
   eslint:
     specifier: ^8.56.0
     version: 8.56.0
@@ -872,7 +872,7 @@ packages:
       - supports-color
     dev: true
 
-  /@vercel/og@0.6.2(patch_hash=ayosv2xfcrzqek2fhic35qjoxm):
+  /@vercel/og@0.6.2(patch_hash=uteknbvbxliojsyifh2gdsf2oi):
     resolution: {integrity: sha512-OTe0KE37F5Y2eTys6eMnfopC+P4qr2ooXUTFyFPTplYSPwowmFk/HLD1FXtbKLjqsIH0SgekcJWad+C5uX4nkg==}
     engines: {node: '>=16'}
     dependencies:

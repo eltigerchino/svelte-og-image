@@ -14,7 +14,7 @@
 
 <style>
 	@font-face {
-		font-family: 'Noto Sans';
+		font-family: 'Noto';
 		font-style: normal;
 		font-weight: 600;
 		src: url('./noto-sans-v27-latin-regular.ttf') format('woff');
@@ -34,10 +34,7 @@
 	}
 
 	h1 {
-		font-family:
-			Noto Sans,
-			'Noto Sans',
-			sans-serif;
+		font-family: 'Noto';
 		font-weight: 600;
 	}
 
