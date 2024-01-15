@@ -50,6 +50,7 @@ export async function createImageResponse<T extends SvelteComponent>(
 		headers: {
 			'content-type': 'image/png',
 			'cache-control': 'public, max-age=0, must-revalidate'
-		}
+		},
+		...options.headers
 	});
 }
