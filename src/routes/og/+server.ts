@@ -15,7 +15,7 @@ export async function GET({ url, fetch }) {
 		{
 			fonts: [
 				{
-					name: 'Noto',
+					name: 'Noto Sans',
 					data: Buffer.from(font),
 					weight: 600,
 					style: 'normal'
