@@ -3,11 +3,16 @@ import Card from './Card.svelte';
 import Noto from './noto-sans-v27-latin-regular.ttf';
 
 export async function GET({ url, fetch }) {
-	const title =
-		url.searchParams.get('title') || 'missing `title` in URL query string. e.g., /og?title=example';
+	let title = url.searchParams.get('title');
 
-	const response = await fetch(Noto);
-	const font = await response.arrayBuffer();
+	title ??= 'missing `title` in URL query string. e.g., /og?title=example';
+
+	// @ts-expect-error EdgeRuntime is injected by Vercel Edge Function
+	const font_url = typeof EdgeRuntime !== 'string' ? Noto : new URL(Noto, import.meta.url);
+
+	const font = await fetch(font_url).then(
+    (res) => res.arrayBuffer(),
+  );
 
 	return new ImageResponse(
 		Card,
