@@ -14,10 +14,10 @@
 
 <style>
 	@font-face {
-		font-family: 'Noto Sans';
+		font-family: 'Overpass';
 		font-style: normal;
 		font-weight: 600;
-		src: url('./noto-sans-v27-latin-regular.ttf') format('truetype');
+		src: url('./overpass-v13-latin-600.ttf') format('truetype');
 	}
 
 	.card {
@@ -34,7 +34,7 @@
 	}
 
 	h1 {
-		font-family: 'Noto Sans';
+		font-family: 'Overpass';
 		font-weight: 600;
 	}
 

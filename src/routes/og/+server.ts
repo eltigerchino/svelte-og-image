@@ -1,16 +1,13 @@
 import { ImageResponse } from '$lib/index.js';
 import Card from './Card.svelte';
-import Noto from './noto-sans-v27-latin-regular.ttf';
+import Overpass from './overpass-v13-latin-600.ttf';
 
 export async function GET({ url, fetch }) {
 	let title = url.searchParams.get('title');
 
 	title ??= 'missing `title` in URL query string. e.g., /og?title=example';
 
-	// @ts-expect-error EdgeRuntime is injected by Vercel Edge Function
-	const font_url = typeof EdgeRuntime !== 'string' ? Noto : new URL('.' + Noto, import.meta.url);
-
-	const font = await fetch(font_url).then((res) => res.arrayBuffer());
+	const font = await fetch(Overpass).then((res) => res.arrayBuffer());
 
 	return new ImageResponse(
 		Card,
@@ -18,7 +15,7 @@ export async function GET({ url, fetch }) {
 		{
 			fonts: [
 				{
-					name: 'Noto Sans',
+					name: 'Overpass',
 					data: Buffer.from(font),
 					weight: 600,
 					style: 'normal'

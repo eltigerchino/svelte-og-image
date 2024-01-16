@@ -24,7 +24,7 @@
 	],
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build && node ./scripts/postbuild.js",
+		"build": "vite build",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint",
 		"prepublishOnly": "npm run package",
@@ -81,10 +81,5 @@
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module",
-	"pnpm": {
-		"patchedDependencies": {
-			"@vercel/og@0.6.2": "patches/@vercel__og@0.6.2.patch"
-		}
-	}
+	"type": "module"
 }
