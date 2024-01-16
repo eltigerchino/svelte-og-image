@@ -8,11 +8,9 @@ export async function GET({ url, fetch }) {
 	title ??= 'missing `title` in URL query string. e.g., /og?title=example';
 
 	// @ts-expect-error EdgeRuntime is injected by Vercel Edge Function
-	const font_url = typeof EdgeRuntime !== 'string' ? Noto : new URL(Noto, import.meta.url);
+	const font_url = typeof EdgeRuntime !== 'string' ? Noto : new URL('.' + Noto, import.meta.url);
 
-	const font = await fetch(font_url).then(
-    (res) => res.arrayBuffer(),
-  );
+	const font = await fetch(font_url).then((res) => res.arrayBuffer());
 
 	return new ImageResponse(
 		Card,
