@@ -1,6 +1,11 @@
 import { ImageResponse } from '$lib/index.js';
 import Card from './Card.svelte';
 import Overpass from './overpass-v13-latin-600.ttf';
+import type { Config } from '@sveltejs/adapter-vercel';
+
+export const config = {
+	runtime: 'edge'
+} satisfies Config;
 
 export async function GET({ url, fetch }) {
 	let title = url.searchParams.get('title');
