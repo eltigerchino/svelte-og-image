@@ -10,5 +10,5 @@ fs.copyFileSync(
 );
 fs.copyFileSync(
 	'node_modules/@vercel/og/dist/noto-sans-v27-latin-regular.ttf',
-	'.vercel/output/functions/fn.func/noto-sans-v27-latin-regular.ttf'
+	'.vercel/output/functions/fn-0.func/noto-sans-v27-latin-regular.ttf'
 );
