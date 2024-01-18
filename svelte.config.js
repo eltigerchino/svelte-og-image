@@ -7,7 +7,8 @@ const config = {
 	kit: {
 		adapter: adapter({
 			split: true,
-			runtime: 'edge'
+			runtime: 'edge',
+			external: ['@vercel/og']
 		})
 	}
 };
