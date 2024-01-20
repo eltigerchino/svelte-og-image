@@ -19,8 +19,7 @@ import Card from './Card.svelte';
 
 export function GET () {
  const response = await fetch('/overpass-v13-latin-600.woff');
-
- const fontData = await response.arrayBuffer();
+ const data = await response.arrayBuffer();
 
  return new ImageResponse(
   Card,
@@ -29,7 +28,7 @@ export function GET () {
    fonts: [
     {
      name: 'Overpass',
-     data: Buffer.from(fontData),
+     data,
      weight: 600,
      style: 'normal'
     }

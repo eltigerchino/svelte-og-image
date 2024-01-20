@@ -16,7 +16,7 @@ export async function GET({ url, fetch }) {
 			fonts: [
 				{
 					name: 'Overpass',
-					data: Buffer.from(font),
+					data: font,
 					weight: 600,
 					style: 'normal'
 				}
