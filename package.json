@@ -81,10 +81,5 @@
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module",
-	"pnpm": {
-		"patchedDependencies": {
-			"@sveltejs/adapter-vercel@5.1.0": "patches/@sveltejs__adapter-vercel@5.1.0.patch"
-		}
-	}
+	"type": "module"
 }

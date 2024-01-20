@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  '@sveltejs/adapter-vercel@5.1.0':
-    hash: yh7yt72fqeg34kxv4s7sqsrzne
-    path: patches/@sveltejs__adapter-vercel@5.1.0.patch
-
 devDependencies:
   '@playwright/test':
     specifier: ^1.41.1
@@ -18,7 +13,7 @@ devDependencies:
     version: 2.6.0
   '@sveltejs/adapter-vercel':
     specifier: ^5.1.0
-    version: 5.1.0(patch_hash=yh7yt72fqeg34kxv4s7sqsrzne)(@sveltejs/kit@2.4.1)
+    version: 5.1.0(@sveltejs/kit@2.4.1)
   '@sveltejs/kit':
     specifier: ^2.4.1
     version: 2.4.1(@sveltejs/vite-plugin-svelte@3.0.1)(svelte@4.2.9)(vite@5.0.12)
@@ -588,7 +583,7 @@ packages:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
 
-  /@sveltejs/adapter-vercel@5.1.0(patch_hash=yh7yt72fqeg34kxv4s7sqsrzne)(@sveltejs/kit@2.4.1):
+  /@sveltejs/adapter-vercel@5.1.0(@sveltejs/kit@2.4.1):
     resolution: {integrity: sha512-Z9yRJ4H2/7LcBlvN2/TKu1H0hWoRGonr8kPhP1GJ23LRW76IbiiX5gs/MLc6+ZGogCZYVJ4USmx6m+RFtvQTRw==}
     peerDependencies:
       '@sveltejs/kit': ^2.4.0
@@ -600,7 +595,6 @@ packages:
       - encoding
       - supports-color
     dev: true
-    patched: true
 
   /@sveltejs/kit@2.4.1(@sveltejs/vite-plugin-svelte@3.0.1)(svelte@4.2.9)(vite@5.0.12):
     resolution: {integrity: sha512-NnDrPOmTjzhgWkwJNPcth3vBMWQmI/QhwbMRXow1p/RkM+17HxP2yQR3GYwIK83rkYSKwQiweyBVWGOjJY4gsg==}
