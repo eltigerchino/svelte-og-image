@@ -3,6 +3,10 @@ import { html } from 'satori-html';
 import { ImageResponse as VercelOGImageResponse } from '@vercel/og';
 import type { ImageResponseOptions } from './types.js';
 
+function include() {
+	import('./noto-sans-v27-latin-regular.ttf')
+}
+
 export class ImageResponse<T extends SvelteComponent> extends VercelOGImageResponse {
 	constructor(
 		component: ComponentType<T>,

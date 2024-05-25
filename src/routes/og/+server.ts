@@ -1,4 +1,4 @@
-import { ImageResponse } from '$lib/index.js';
+import { ImageResponse } from 'svelte-og-image';
 import Card from './Card.svelte';
 // import Overpass from './overpass-v13-latin-600.ttf';
 
