@@ -1,0 +1,14 @@
+diff --git a/index.js b/index.js
+index 7506a90d782d92cb3b58b8b8be75392092ba712e..a8516a1b2e4464381969477bbaf4cd09ff34e01a 100644
+--- a/index.js
++++ b/index.js
+@@ -134,7 +134,8 @@ const plugin = function (defaults = {}) {
+ 						sourcemap: 'linked',
+ 						banner: { js: 'globalThis.global = globalThis;' },
+ 						loader: {
+-							'.wasm': 'copy'
++							'.wasm': 'copy',
++							'.ttf': 'file'
+ 						}
+ 					});
+ 

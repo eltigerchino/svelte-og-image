@@ -13,12 +13,12 @@
 </div>
 
 <style>
-	@font-face {
+	/* @font-face {
 		font-family: 'Overpass';
 		font-style: normal;
 		font-weight: 600;
 		src: url('./overpass-v13-latin-600.ttf') format('truetype');
-	}
+	} */
 
 	.card {
 		display: flex; /** required by satori */
@@ -34,7 +34,7 @@
 	}
 
 	h1 {
-		font-family: 'Overpass';
+		/* font-family: 'Overpass'; */
 		font-weight: 600;
 	}
 
