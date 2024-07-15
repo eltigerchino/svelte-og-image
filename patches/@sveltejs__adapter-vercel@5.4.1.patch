@@ -1,5 +1,5 @@
 diff --git a/files/edge.js b/files/edge.js
-index 9834559a22353382b3a7a5c309d846ab80de0e53..2081134e401d7fdace0cf2aebd2268d9e8fafef4 100644
+index 9834559a22353382b3a7a5c309d846ab80de0e53..0bb28c6964cca1557cc7f6016170672201067f86 100644
 --- a/files/edge.js
 +++ b/files/edge.js
 @@ -2,8 +2,44 @@ import { Server } from 'SERVER';
@@ -23,7 +23,7 @@ index 9834559a22353382b3a7a5c309d846ab80de0e53..2081134e401d7fdace0cf2aebd2268d9
 +
 +		return new ReadableStream({
 +			async start(controller) {
-+				const url = `${origin}${file}`;
++				const url = `${origin}/${file}`;
 +				console.log({ origin, file, url })
 +				try {
 +					const response = await fetch(url, { signal });
