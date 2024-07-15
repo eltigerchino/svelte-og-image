@@ -9,7 +9,7 @@ patchedDependencies:
     hash: wj5avpaz5tnd4g5e7x6u5pbxz4
     path: patches/@sveltejs__adapter-vercel@5.4.1.patch
   '@vercel/og@0.6.2':
-    hash: os4havk4cav2xmnwwy7lrblexy
+    hash: e2ljya4iucavwubd7unrcnrw54
     path: patches/@vercel__og@0.6.2.patch
 
 importers:
@@ -52,7 +52,7 @@ importers:
         version: 7.16.0(eslint@8.57.0)(typescript@5.5.3)
       '@vercel/og':
         specifier: ^0.6.2
-        version: 0.6.2(patch_hash=os4havk4cav2xmnwwy7lrblexy)
+        version: 0.6.2(patch_hash=e2ljya4iucavwubd7unrcnrw54)
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -2167,7 +2167,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@vercel/og@0.6.2(patch_hash=os4havk4cav2xmnwwy7lrblexy)':
+  '@vercel/og@0.6.2(patch_hash=e2ljya4iucavwubd7unrcnrw54)':
     dependencies:
       '@resvg/resvg-wasm': 2.4.0
       satori: 0.10.9

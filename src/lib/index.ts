@@ -1,13 +1,13 @@
 import type { ComponentProps, ComponentType, SvelteComponent } from 'svelte';
 import { html } from 'satori-html';
 import { ImageResponse as VercelOGImageResponse } from '@vercel/og';
-import type { ImageResponseOptions } from '@vercel/og/types';
+import type { ImageResponseOptions } from './types.js';
 
 export class ImageResponse<T extends SvelteComponent> extends VercelOGImageResponse {
 	constructor(
 		component: ComponentType<T>,
 		props: ComponentProps<T>,
-		options: ImageResponseOptions = {}
+		options: ImageResponseOptions
 	) {
 		// @ts-expect-error - Svelte types are not up to date
 		// see https://svelte.dev/docs/server-side-component-api

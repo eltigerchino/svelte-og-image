@@ -28,7 +28,7 @@ index 089354ce4b62dde0fed3482e028ffade3d34b750..e22453fe8ade3f5150eedcd32e4bbd7c
          controller.close();
        }
 diff --git a/dist/types.d.ts b/dist/types.d.ts
-index aba1429ce82752da7d345884fc4b357fe2a2b79f..b1bd9dd2497141969f03d230624ab535670f15ef 100644
+index aba1429ce82752da7d345884fc4b357fe2a2b79f..03100321a12b0bae6096a93df32e37dc68be5c22 100644
 --- a/dist/types.d.ts
 +++ b/dist/types.d.ts
 @@ -4,7 +4,8 @@
@@ -59,6 +59,15 @@ index aba1429ce82752da7d345884fc4b357fe2a2b79f..b1bd9dd2497141969f03d230624ab535
  export interface FigmaImageResponseProps {
      /**
       * Link to the Figma template frame.
+@@ -92,7 +93,7 @@ export interface FigmaComplexTemplate {
+ }
+ declare type Weight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+ declare type Style = 'normal' | 'italic';
+-interface FontOptions {
++export interface FontOptions {
+     data: Buffer | ArrayBuffer;
+     name: string;
+     weight?: Weight;
 diff --git a/package.json b/package.json
 index fb4338ec5c43b53dea8371932c2de31f80470c3d..24013ad43c0add1bec6c573f73f8c968e6fde76b 100644
 --- a/package.json
