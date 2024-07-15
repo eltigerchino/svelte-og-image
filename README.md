@@ -16,25 +16,28 @@ If you're using [SvelteKit](https://kit.svelte.dev), create an API route that ex
 // src/routes/og/+server.js
 import { ImageResponse } from 'svelte-og-image';
 import Card from './Card.svelte';
-import Overpass from './overpass-v13-latin-600.ttf';
+import font from './overpass-v13-latin-600.ttf';
+import { read } from '$app/server';
 
-export function GET () {
-	const font = await fetch(Overpass).then((res) => res.arrayBuffer());
+export async function GET({ url }) {
 
- return new ImageResponse(
-  Card,
-  { title },
-  {
-   fonts: [
-    {
-     name: 'Overpass',
-     data: font,
-     weight: 600,
-     style: 'normal'
-    }
-   ]
-  }
- );
+	const fontData = await read(font).arrayBuffer();
+
+	return new ImageResponse(
+		Card,
+		{ title: 'hello world!' },
+		{
+      // always specify at least one font
+			fonts: [
+				{
+					name: 'Overpass',
+					data: fontData,
+					weight: 600,
+					style: 'normal'
+				}
+			]
+		}
+	);
 }
 ```
 
