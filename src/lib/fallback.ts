@@ -2,10 +2,10 @@
 
 import { html } from 'satori-html';
 import type { ComponentProps, ComponentType, SvelteComponent } from 'svelte';
-import type { ImageResponseOptions } from './types.js';
 import satori from 'satori';
 import { Resvg, initWasm } from '@resvg/resvg-wasm';
 import resvgWasmUrl from '@resvg/resvg-wasm/index_bg.wasm?url';
+import type { ImageResponseOptions } from '@vercel/og/types';
 
 const DEFAULT_HEIGHT = 630;
 const DEFAULT_WIDTH = 1200;
@@ -23,7 +23,7 @@ export async function createImageResponse<T extends SvelteComponent>(
 	const width = options?.width ?? DEFAULT_WIDTH;
 
 	const svg = await satori(element, {
-		fonts: options?.fonts,
+		fonts: options?.fonts || [],
 		height: options?.height ?? DEFAULT_HEIGHT,
 		width,
 		debug: options?.debug

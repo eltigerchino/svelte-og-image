@@ -1,26 +1,27 @@
 import { ImageResponse } from 'svelte-og-image';
 import Card from './Card.svelte';
-// import Overpass from './overpass-v13-latin-600.ttf';
+import font from './overpass-v13-latin-600.ttf';
+import { read } from '$app/server';
 
-export async function GET({ url, fetch }) {
+export async function GET({ url }) {
 	let title = url.searchParams.get('title');
 
 	title ??= 'missing `title` in URL query string. e.g., /og?title=example';
 
-	// const font = await fetch(Overpass).then((res) => res.arrayBuffer());
+	const fontData = await read(font).arrayBuffer();
 
 	return new ImageResponse(
 		Card,
 		{ title },
-		// {
-		// 	fonts: [
-		// 		{
-		// 			name: 'Overpass',
-		// 			data: font,
-		// 			weight: 600,
-		// 			style: 'normal'
-		// 		}
-		// 	]
-		// }
+		{
+			fonts: [
+				{
+					name: 'Overpass',
+					data: fontData,
+					weight: 600,
+					style: 'normal'
+				}
+			]
+		}
 	);
 }

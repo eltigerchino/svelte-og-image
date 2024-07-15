@@ -1,0 +1,84 @@
+diff --git a/files/edge.js b/files/edge.js
+index 9834559a22353382b3a7a5c309d846ab80de0e53..2009defd9187a0cc57ab0e9118bc2145aecc2e7e 100644
+--- a/files/edge.js
++++ b/files/edge.js
+@@ -2,8 +2,42 @@ import { Server } from 'SERVER';
+ import { manifest } from 'MANIFEST';
+ 
+ const server = new Server(manifest);
++
++/**
++ * We don't know the origin until we receive a request, but
++ * that's guaranteed to happen before we call `read`
++ * @type {string}
++ */
++let origin;
++
+ const initialized = server.init({
+-	env: /** @type {Record<string, string>} */ (process.env)
++	env: /** @type {Record<string, string>} */ (process.env),
++	read: (file) => {
++		const controller = new AbortController();
++		const signal = controller.signal;
++
++		return new ReadableStream({
++			async start(controller) {
++				try {
++					const response = await fetch(`${origin}${file}`, { signal });
++					const reader = /** @type {ReadableStream} */ (response.body).getReader();
++
++					while (true) {
++						const { done, value } = await reader.read();
++						if (done) break;
++						controller.enqueue(value);
++					}
++
++					controller.close();
++				} catch (error) {
++					controller.error(error);
++				}
++			},
++			cancel(reason) {
++				controller.abort(reason);
++			}
++		});
++	}
+ });
+ 
+ /**
+@@ -11,7 +45,10 @@ const initialized = server.init({
+  * @param {import('../index.js').RequestContext} context
+  */
+ export default async (request, context) => {
+-	await initialized;
++	if (!origin) {
++		origin = new URL(request.url).origin;
++		await initialized;
++	}
+ 
+ 	return server.respond(request, {
+ 		getClientAddress() {
+diff --git a/index.js b/index.js
+index 46a3e00bdf68b4680dfe2c4b571f8dc89b044bed..38ef0b78973e8c19a8df2aaf20704ada633e6bfc 100644
+--- a/index.js
++++ b/index.js
+@@ -385,18 +385,7 @@ const plugin = function (defaults = {}) {
+ 		},
+ 
+ 		supports: {
+-			// reading from the filesystem only works in serverless functions
+-			read: ({ config, route }) => {
+-				const runtime = config.runtime ?? defaults.runtime;
+-
+-				if (runtime === 'edge') {
+-					throw new Error(
+-						`${name}: Cannot use \`read\` from \`$app/server\` in route \`${route.id}\` configured with \`runtime: 'edge'\``
+-					);
+-				}
+-
+-				return true;
+-			}
++			read: () => true
+ 		}
+ 	};
+ };

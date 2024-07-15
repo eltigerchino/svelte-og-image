@@ -8,17 +8,18 @@
 <div class="card">
 	<h1>{title}</h1>
 	<div class="logo">
+		<!-- eslint-disable-next-line svelte/no-at-html-tags we know the content is safe -->
 		{@html logo}
 	</div>
 </div>
 
 <style>
-	/* @font-face {
+	@font-face {
 		font-family: 'Overpass';
 		font-style: normal;
 		font-weight: 600;
 		src: url('./overpass-v13-latin-600.ttf') format('truetype');
-	} */
+	}
 
 	.card {
 		display: flex; /** required by satori */
@@ -34,7 +35,7 @@
 	}
 
 	h1 {
-		/* font-family: 'Overpass'; */
+		font-family: 'Overpass';
 		font-weight: 600;
 	}
 
@@ -43,14 +44,14 @@
 		padding: 1rem;
 		border-radius: 100%;
 
-		/* CSS variables are not allowed */
+		/* variables are not supported */
 		/* --size: 100px;
 		width: var(--size);
 		height: var(--size); */
 		width: 150px;
 		height: 150px;
 
-		/** grid is not allowed */
+		/** grid is not supported */
 		/* display: grid;
 		place-content: center; */
 

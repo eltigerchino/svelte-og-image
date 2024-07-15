@@ -54,37 +54,38 @@
 		"svelte": "^4.0.0"
 	},
 	"devDependencies": {
-		"@playwright/test": "^1.44.1",
+		"@playwright/test": "^1.45.1",
 		"@resvg/resvg-wasm": "^2.6.2",
-		"@sveltejs/adapter-vercel": "^5.3.0",
-		"@sveltejs/kit": "^2.5.10",
-		"@sveltejs/package": "^2.3.1",
-		"@sveltejs/vite-plugin-svelte": "^3.1.0",
+		"@sveltejs/adapter-vercel": "^5.4.1",
+		"@sveltejs/kit": "^2.5.18",
+		"@sveltejs/package": "^2.3.2",
+		"@sveltejs/vite-plugin-svelte": "^3.1.1",
 		"@types/eslint": "8.56.10",
-		"@types/node": "^20.12.12",
-		"@typescript-eslint/eslint-plugin": "^7.10.0",
-		"@typescript-eslint/parser": "^7.10.0",
+		"@types/node": "^20.14.10",
+		"@typescript-eslint/eslint-plugin": "^7.16.0",
+		"@typescript-eslint/parser": "^7.16.0",
 		"@vercel/og": "^0.6.2",
-		"eslint": "^9.3.0",
+		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.39.0",
-		"prettier": "^3.2.5",
-		"prettier-plugin-svelte": "^3.2.3",
+		"eslint-plugin-svelte": "^2.42.0",
+		"prettier": "^3.3.2",
+		"prettier-plugin-svelte": "^3.2.5",
 		"publint": "^0.2.8",
-		"satori": "^0.10.13",
-		"svelte": "^4.2.17",
-		"svelte-check": "^3.7.1",
-		"tslib": "^2.6.2",
-		"typescript": "^5.4.5",
-		"vite": "^5.2.11",
-		"vitest": "^1.6.0"
+		"satori": "^0.10.14",
+		"svelte": "^4.2.18",
+		"svelte-check": "^3.8.4",
+		"tslib": "^2.6.3",
+		"typescript": "^5.5.3",
+		"vite": "^5.3.3",
+		"vitest": "^2.0.2"
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"pnpm": {
 		"patchedDependencies": {
-			"@sveltejs/adapter-vercel@5.3.0": "patches/@sveltejs__adapter-vercel@5.3.0.patch"
+			"@vercel/og@0.6.2": "patches/@vercel__og@0.6.2.patch",
+			"@sveltejs/adapter-vercel@5.4.1": "patches/@sveltejs__adapter-vercel@5.4.1.patch"
 		}
 	}
 }
