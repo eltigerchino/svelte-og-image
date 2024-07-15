@@ -9,7 +9,7 @@ export async function GET({ url }) {
 	title ??= 'missing `title` in URL query string. e.g., /og?title=example';
 
 	const res = read(font);
-	console.log({ res });
+	console.log({ url: res.url, headers: res.headers, status: res.status });
 	const fontData = await res.arrayBuffer();
 
 	return new ImageResponse(
