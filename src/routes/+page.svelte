@@ -1,13 +1,30 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 
 	const page_title = 'Svelte OG Image';
-
 	const og_image = new URL(`/og?title=${page_title}`, $page.url.origin).href;
 
-	let value = page_title;
+	let title = $page.url.searchParams.get('title') || page_title;
+	let value = title;
 
-	$: url = new URL(`/og?title=${value}`, $page.url.origin).href;
+	$: url = new URL(`/og?title=${title}`, $page.url.origin).href;
+
+	function debounce(fn: () => void, ms: number) {
+		let timeout: number;
+		return () => {
+			clearTimeout(timeout);
+			timeout = window.setTimeout(fn, ms);
+		};
+	}
+
+	const submitHandler = debounce(() => {
+		title = value;
+		goto('?' + new URLSearchParams({ title: value }), {
+			replaceState: true,
+			keepFocus: true
+		});
+	}, 500);
 </script>
 
 <svelte:head>
@@ -19,8 +36,10 @@
 <article>
 	<h1>{page_title}</h1>
 
-	<label for="title">Title</label>
-	<input id="title" name="title" bind:value />
+	<form>
+		<label for="title">Title</label>
+		<input id="title" name="title" bind:value on:input={submitHandler} />
+	</form>
 
 	<a href={url}>View OG image</a>
 </article>
