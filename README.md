@@ -20,24 +20,23 @@ import font from './overpass-v13-latin-600.ttf';
 import { read } from '$app/server';
 
 export async function GET({ url }) {
-
-	const fontData = await read(font).arrayBuffer();
-
-	return new ImageResponse(
-		Card,
-		{ title: 'hello world!' },
-		{
+  const fontData = await read(font).arrayBuffer();
+	
+  return new ImageResponse(
+    Card,
+    { title: 'hello world!' },
+    {
       // always specify at least one font
-			fonts: [
-				{
-					name: 'Overpass',
-					data: fontData,
-					weight: 600,
-					style: 'normal'
-				}
-			]
-		}
-	);
+      fonts: [
+        {
+          name: 'Overpass',
+          data: fontData,
+          weight: 600,
+          style: 'normal'
+        }
+      ]
+    }
+  );
 }
 ```
 
