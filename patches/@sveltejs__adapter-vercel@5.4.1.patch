@@ -1,8 +1,8 @@
 diff --git a/files/edge.js b/files/edge.js
-index 9834559a22353382b3a7a5c309d846ab80de0e53..2009defd9187a0cc57ab0e9118bc2145aecc2e7e 100644
+index 9834559a22353382b3a7a5c309d846ab80de0e53..2081134e401d7fdace0cf2aebd2268d9e8fafef4 100644
 --- a/files/edge.js
 +++ b/files/edge.js
-@@ -2,8 +2,42 @@ import { Server } from 'SERVER';
+@@ -2,8 +2,44 @@ import { Server } from 'SERVER';
  import { manifest } from 'MANIFEST';
  
  const server = new Server(manifest);
@@ -23,8 +23,10 @@ index 9834559a22353382b3a7a5c309d846ab80de0e53..2009defd9187a0cc57ab0e9118bc2145
 +
 +		return new ReadableStream({
 +			async start(controller) {
++				const url = `${origin}${file}`;
++				console.log({ origin, file, url })
 +				try {
-+					const response = await fetch(`${origin}${file}`, { signal });
++					const response = await fetch(url, { signal });
 +					const reader = /** @type {ReadableStream} */ (response.body).getReader();
 +
 +					while (true) {
@@ -46,7 +48,7 @@ index 9834559a22353382b3a7a5c309d846ab80de0e53..2009defd9187a0cc57ab0e9118bc2145
  });
  
  /**
-@@ -11,7 +45,10 @@ const initialized = server.init({
+@@ -11,7 +47,10 @@ const initialized = server.init({
   * @param {import('../index.js').RequestContext} context
   */
  export default async (request, context) => {

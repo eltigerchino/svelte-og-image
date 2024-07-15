@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   '@sveltejs/adapter-vercel@5.4.1':
-    hash: 6r5tkttluidbwmzc2ysy2vhjuq
+    hash: 22wjoei7mohoa5yo4f2didz5gi
     path: patches/@sveltejs__adapter-vercel@5.4.1.patch
   '@vercel/og@0.6.2':
     hash: os4havk4cav2xmnwwy7lrblexy
@@ -28,7 +28,7 @@ importers:
         version: 2.6.2
       '@sveltejs/adapter-vercel':
         specifier: ^5.4.1
-        version: 5.4.1(patch_hash=6r5tkttluidbwmzc2ysy2vhjuq)(@sveltejs/kit@2.5.18(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.3(@types/node@20.14.10)))(svelte@4.2.18)(vite@5.3.3(@types/node@20.14.10)))
+        version: 5.4.1(patch_hash=22wjoei7mohoa5yo4f2didz5gi)(@sveltejs/kit@2.5.18(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.3(@types/node@20.14.10)))(svelte@4.2.18)(vite@5.3.3(@types/node@20.14.10)))
       '@sveltejs/kit':
         specifier: ^2.5.18
         version: 2.5.18(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.3(@types/node@20.14.10)))(svelte@4.2.18)(vite@5.3.3(@types/node@20.14.10))
@@ -1988,7 +1988,7 @@ snapshots:
       fflate: 0.7.4
       string.prototype.codepointat: 0.2.1
 
-  '@sveltejs/adapter-vercel@5.4.1(patch_hash=6r5tkttluidbwmzc2ysy2vhjuq)(@sveltejs/kit@2.5.18(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.3(@types/node@20.14.10)))(svelte@4.2.18)(vite@5.3.3(@types/node@20.14.10)))':
+  '@sveltejs/adapter-vercel@5.4.1(patch_hash=22wjoei7mohoa5yo4f2didz5gi)(@sveltejs/kit@2.5.18(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.3(@types/node@20.14.10)))(svelte@4.2.18)(vite@5.3.3(@types/node@20.14.10)))':
     dependencies:
       '@sveltejs/kit': 2.5.18(@sveltejs/vite-plugin-svelte@3.1.1(svelte@4.2.18)(vite@5.3.3(@types/node@20.14.10)))(svelte@4.2.18)(vite@5.3.3(@types/node@20.14.10))
       '@vercel/nft': 0.27.3
