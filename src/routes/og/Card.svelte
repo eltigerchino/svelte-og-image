@@ -18,7 +18,7 @@
 		font-family: 'Overpass';
 		font-style: normal;
 		font-weight: 600;
-		src: url('./overpass-latin-600.woff2') format('woff2');
+		src: url('./Overpass-SemiBold.ttf') format('truetype');
 	}
 
 	.card {

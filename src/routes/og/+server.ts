@@ -1,6 +1,6 @@
 import { ImageResponse } from 'svelte-og-image';
 import Card from './Card.svelte';
-import font from './overpass-latin-600.woff2';
+import font from './Overpass-SemiBold.ttf';
 import { read } from '$app/server';
 
 export async function GET({ url }) {
@@ -19,7 +19,7 @@ export async function GET({ url }) {
 					name: 'Overpass',
 					data: fontData,
 					weight: 600,
-					style: 'normal'
+					style: 'normal',
 				}
 			]
 		}
