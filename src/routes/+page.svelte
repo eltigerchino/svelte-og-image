@@ -31,12 +31,17 @@
 
 <style>
 	img {
+		display: inline-block;
 		width: 100%;
 		max-width: 1200px;
 		height: auto;
 	}
 
 	.img-placeholder {
+		display: flex;
+		width: 100%;
+		max-width: 1200px;
+		aspect-ratio: 1200 / 630;
 		margin-top: 1rem;
 		background-color: #eee;
 	}
