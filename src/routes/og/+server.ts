@@ -8,7 +8,9 @@ export async function GET({ url }) {
 
 	title ??= 'missing `title` in URL query string. e.g., /og?title=example';
 
-	const fontData = await read(font).arrayBuffer();
+	const res = read(font);
+	console.log({ res });
+	const fontData = await res.arrayBuffer();
 
 	return new ImageResponse(
 		Card,
@@ -18,7 +20,7 @@ export async function GET({ url }) {
 				{
 					name: 'Noto Sans',
 					data: fontData,
-					style: 'normal',
+					style: 'normal'
 				}
 			]
 		}
