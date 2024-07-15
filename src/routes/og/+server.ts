@@ -1,16 +1,16 @@
 import { ImageResponse } from 'svelte-og-image';
 import Card from './Card.svelte';
-import font from './noto-sans-v27-latin-regular.ttf';
+import font from './Overpass-SemiBold.ttf';
 import { read } from '$app/server';
+
+const initFontData = read(font).arrayBuffer();
 
 export async function GET({ url }) {
 	let title = url.searchParams.get('title');
 
 	title ??= 'missing `title` in URL query string. e.g., /og?title=example';
 
-	const res = read(font);
-	console.log({ url: res.url, headers: Object.fromEntries(res.headers.entries()), status: res.status });
-	const fontData = await res.arrayBuffer();
+	const fontData = await initFontData;
 
 	return new ImageResponse(
 		Card,
@@ -18,9 +18,10 @@ export async function GET({ url }) {
 		{
 			fonts: [
 				{
-					name: 'Noto Sans',
+					name: 'Overpass',
 					data: fontData,
-					style: 'normal'
+					style: 'normal',
+					weight: 600
 				}
 			]
 		}
