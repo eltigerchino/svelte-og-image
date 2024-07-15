@@ -15,10 +15,9 @@
 
 <style>
 	@font-face {
-		font-family: 'Overpass';
+		font-family: 'Typewriter';
 		font-style: normal;
-		font-weight: 600;
-		src: url('./Overpass-SemiBold.ttf') format('truetype');
+		src: url('./typewriter.ttf') format('truetype');
 	}
 
 	.card {
@@ -35,8 +34,7 @@
 	}
 
 	h1 {
-		font-family: 'Overpass';
-		font-weight: 600;
+		font-family: 'Typewriter';
 	}
 
 	.logo {
