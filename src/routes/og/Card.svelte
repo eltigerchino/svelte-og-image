@@ -14,10 +14,17 @@
 </div>
 
 <style>
-	@font-face {
-		font-family: 'Typewriter';
+	/* @font-face {
+		font-family: 'Overpass';
 		font-style: normal;
-		src: url('./typewriter.ttf') format('truetype');
+		font-weight: 600;
+		src: url('./Overpass-SemiBold.ttf') format('truetype');
+	} */
+
+	@font-face {
+		font-family: 'Noto Sans';
+		font-style: normal;
+		src: url('./noto-sans-v27-latin-regular.ttf') format('truetype');
 	}
 
 	.card {
@@ -34,7 +41,7 @@
 	}
 
 	h1 {
-		font-family: 'Typewriter';
+		font-family: 'Noto Sans';
 	}
 
 	.logo {

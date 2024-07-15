@@ -1,6 +1,6 @@
 import { ImageResponse } from 'svelte-og-image';
 import Card from './Card.svelte';
-import font from './typewriter.ttf';
+import font from './noto-sans-v27-latin-regular.ttf';
 import { read } from '$app/server';
 
 export async function GET({ url }) {
@@ -16,7 +16,7 @@ export async function GET({ url }) {
 		{
 			fonts: [
 				{
-					name: 'Typewriter',
+					name: 'Noto Sans',
 					data: fontData,
 					style: 'normal',
 				}
