@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@vercel/og':
+    hash: 2d57aaff6f138c62601e37e001477e5696ab43752c630b5f8bd8ff68dd08f2f7
+    path: patches/@vercel__og.patch
+
 importers:
 
   .:
@@ -47,7 +52,7 @@ importers:
         version: 8.38.0(eslint@9.32.0)(typescript@5.8.3)
       '@vercel/og':
         specifier: ^0.8.5
-        version: 0.8.5
+        version: 0.8.5(patch_hash=2d57aaff6f138c62601e37e001477e5696ab43752c630b5f8bd8ff68dd08f2f7)
       '@vitest/browser':
         specifier: ^3.2.4
         version: 3.2.4(playwright@1.54.1)(vite@7.0.6(@types/node@24.1.0))(vitest@3.2.4)
@@ -2286,7 +2291,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vercel/og@0.8.5':
+  '@vercel/og@0.8.5(patch_hash=2d57aaff6f138c62601e37e001477e5696ab43752c630b5f8bd8ff68dd08f2f7)':
     dependencies:
       '@resvg/resvg-wasm': 2.4.0
       satori: 0.16.0

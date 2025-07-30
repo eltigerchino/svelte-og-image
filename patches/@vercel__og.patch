@@ -1,0 +1,29 @@
+diff --git a/dist/index.edge.js b/dist/index.edge.js
+index e3cb870fb1fc261969933d6589a55079ae874ae8..2c04d07b94c78b8234478f72af22e8bb8300b378 100644
+--- a/dist/index.edge.js
++++ b/dist/index.edge.js
+@@ -20528,23 +20528,11 @@ async function render(satori, resvg, opts, defaultFonts, element) {
+ 
+ // src/index.edge.ts
+ var initializedResvg = initWasm(resvg_wasm);
+-var fallbackFont = fetch(
+-  new URL("./noto-sans-v27-latin-regular.ttf", import.meta.url)
+-).then((res) => res.arrayBuffer());
+ var ImageResponse = class extends Response {
+   constructor(element, options = {}) {
+     const result = new ReadableStream({
+       async start(controller) {
+-        const [fontData] = await Promise.all([fallbackFont, initializedResvg]);
+-        const fonts = [
+-          {
+-            name: "sans serif",
+-            data: fontData,
+-            weight: 700,
+-            style: "normal"
+-          }
+-        ];
+-        const result2 = await render(Tl, resvg_wasm_exports, options, fonts, element);
++        const result2 = await render(wl, resvg_wasm_exports, options, [], element);
+         controller.enqueue(result2);
+         controller.close();
+       }
