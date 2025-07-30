@@ -10,7 +10,7 @@ pnpm i -D svelte-og-image
 
 ## Usage
 
-If you're using [SvelteKit](https://kit.svelte.dev), create an API route that exposes a GET function. Then, import the `ImageResponse` class and the Svelte component you wish to render as an image.
+If you're using [SvelteKit](https://kit.svelte.dev), create an API route that exposes a GET function. Then, import the `ImageResponse` class and the Svelte component you wish to render as an image. The Svelte component you use must have the injected CSS option `<svelte:options css="injected" />` so that the renderer can retrieve the injected styles.
 
 ```js
 // src/routes/og/+server.js

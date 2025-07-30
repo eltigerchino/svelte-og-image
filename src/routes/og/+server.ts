@@ -1,7 +1,7 @@
-import { ImageResponse } from 'svelte-og-image';
+import { read } from '$app/server';
+import { ImageResponse } from '$lib/index.js';
 import Card from './Card.svelte';
 import font from './Overpass-SemiBold.ttf';
-import { read } from '$app/server';
 
 export async function GET({ url }) {
 	let title = url.searchParams.get('title');

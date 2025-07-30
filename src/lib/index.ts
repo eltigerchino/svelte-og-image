@@ -1,18 +1,19 @@
-import type { ComponentProps, ComponentType, SvelteComponent } from 'svelte';
+import type { Component, ComponentProps } from 'svelte';
 import { html } from 'satori-html';
 import { ImageResponse as VercelOGImageResponse } from '@vercel/og';
 import type { ImageResponseOptions } from './types.js';
-
-export class ImageResponse<T extends SvelteComponent> extends VercelOGImageResponse {
+import { render } from 'svelte/server';
+ 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export class ImageResponse<TComponent extends Component<any>> extends VercelOGImageResponse {
 	constructor(
-		component: ComponentType<T>,
-		props: ComponentProps<T>,
+		component: TComponent,
+		props: ComponentProps<TComponent>,
 		options: ImageResponseOptions
 	) {
-		// @ts-expect-error - Svelte types are not up to date
-		// see https://svelte.dev/docs/server-side-component-api
-		const result = (component as SvelteComponentSSR<T>).render(props);
-		const element = html(`${result.html}<style>${result.css.code}</style>`);
+		// @ts-expect-error what the heck is the problem??
+		const result = render(component, { props });
+		const element = html(`${result.body}${result.head}`);
 
 		super(element, options);
 	}

@@ -1,12 +1,18 @@
 <!-- Thanks to https://geoffrich.net/posts/svelte-social-image/ -->
+
+<!-- required to get the css during SSR -->
+<svelte:options css="injected" />
+
 <script lang="ts">
 	import logo from './svelte-logo.svg?raw';
 
-	export let title: string;
+	let { title } = $props<{ title: string }>();
 </script>
 
 <div class="card">
-	<h1>{title}</h1>
+	{#if title}
+		<h1>{title}</h1>
+	{/if}
 	<div class="logo">
 		<!-- eslint-disable-next-line svelte/no-at-html-tags we know the content is safe -->
 		{@html logo}
@@ -32,10 +38,12 @@
 		align-items: center;
 		justify-content: center;
 		text-align: center;
+		gap: 48px;
 	}
 
 	h1 {
 		font-family: 'Overpass';
+		margin-bottom: 0;
 	}
 
 	.logo {
