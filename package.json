@@ -96,5 +96,6 @@
 		"patchedDependencies": {
 			"@vercel/og": "patches/@vercel__og.patch"
 		}
-	}
+	},
+	"packageManager": "pnpm@10.13.1"
 }
