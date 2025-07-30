@@ -1,5 +1,6 @@
 import { read } from '$app/server';
-import { ImageResponse } from 'svelte-og-image';
+import { ImageResponse } from '$lib/index.js';
+// import { ImageResponse } from 'svelte-og-image';
 import Card from './Card.svelte';
 import font from './Overpass-SemiBold.ttf';
 
