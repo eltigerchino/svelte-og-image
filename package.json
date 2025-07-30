@@ -40,7 +40,7 @@
 		}
 	},
 	"peerDependencies": {
-		"@vercel/og": ">=0.7.0",
+		"@vercel/og": "^0.7.0",
 		"satori-html": "^0.3.2",
 		"svelte": "^5.0.0"
 	},
