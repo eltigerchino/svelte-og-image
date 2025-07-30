@@ -1,11 +1,11 @@
 diff --git a/dist/index.edge.js b/dist/index.edge.js
-index e3cb870fb1fc261969933d6589a55079ae874ae8..2c04d07b94c78b8234478f72af22e8bb8300b378 100644
+index 6b58b22e37f355d5fd5508f706c3140fca3e7665..bb0fe9e43ad5a318d6fcf964926d48c81cd11e80 100644
 --- a/dist/index.edge.js
 +++ b/dist/index.edge.js
-@@ -20528,23 +20528,11 @@ async function render(satori, resvg, opts, defaultFonts, element) {
- 
+@@ -20083,27 +20083,11 @@ function assertValue(v2, errorMessage) {
  // src/index.edge.ts
  var initializedResvg = initWasm(resvg_wasm);
+ var initializedYoga = initYoga(yoga_wasm).then((yoga2) => Wl(yoga2));
 -var fallbackFont = fetch(
 -  new URL("./noto-sans-v27-latin-regular.ttf", import.meta.url)
 -).then((res) => res.arrayBuffer());
@@ -13,7 +13,11 @@ index e3cb870fb1fc261969933d6589a55079ae874ae8..2c04d07b94c78b8234478f72af22e8bb
    constructor(element, options = {}) {
      const result = new ReadableStream({
        async start(controller) {
--        const [fontData] = await Promise.all([fallbackFont, initializedResvg]);
+-        const [fontData] = await Promise.all([
+-          fallbackFont,
+-          initializedYoga,
+-          initializedResvg
+-        ]);
 -        const fonts = [
 -          {
 -            name: "sans serif",
@@ -22,7 +26,7 @@ index e3cb870fb1fc261969933d6589a55079ae874ae8..2c04d07b94c78b8234478f72af22e8bb
 -            style: "normal"
 -          }
 -        ];
--        const result2 = await render(Tl, resvg_wasm_exports, options, fonts, element);
+-        const result2 = await render(Ol, resvg_wasm_exports, options, fonts, element);
 +        const result2 = await render(wl, resvg_wasm_exports, options, [], element);
          controller.enqueue(result2);
          controller.close();

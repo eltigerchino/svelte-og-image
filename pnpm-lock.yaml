@@ -6,7 +6,7 @@ settings:
 
 patchedDependencies:
   '@vercel/og':
-    hash: 2d57aaff6f138c62601e37e001477e5696ab43752c630b5f8bd8ff68dd08f2f7
+    hash: 06f7aebe3ff458d24ee6914ac417fdf587960281db99da3f9f703fc6ce4d27b0
     path: patches/@vercel__og.patch
 
 importers:
@@ -52,7 +52,7 @@ importers:
         version: 8.38.0(eslint@9.32.0)(typescript@5.8.3)
       '@vercel/og':
         specifier: ^0.7.2
-        version: 0.7.2(patch_hash=2d57aaff6f138c62601e37e001477e5696ab43752c630b5f8bd8ff68dd08f2f7)
+        version: 0.7.2(patch_hash=06f7aebe3ff458d24ee6914ac417fdf587960281db99da3f9f703fc6ce4d27b0)
       '@vitest/browser':
         specifier: ^3.2.4
         version: 3.2.4(playwright@1.54.1)(vite@7.0.6(@types/node@24.1.0))(vitest@3.2.4)
@@ -2291,7 +2291,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@vercel/og@0.7.2(patch_hash=2d57aaff6f138c62601e37e001477e5696ab43752c630b5f8bd8ff68dd08f2f7)':
+  '@vercel/og@0.7.2(patch_hash=06f7aebe3ff458d24ee6914ac417fdf587960281db99da3f9f703fc6ce4d27b0)':
     dependencies:
       '@resvg/resvg-wasm': 2.4.0
       satori: 0.15.2
