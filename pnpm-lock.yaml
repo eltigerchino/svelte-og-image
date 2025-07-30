@@ -51,7 +51,7 @@ importers:
         specifier: ^8.38.0
         version: 8.38.0(eslint@9.32.0)(typescript@5.8.3)
       '@vercel/og':
-        specifier: ^0.7.2
+        specifier: ~0.7.2
         version: 0.7.2(patch_hash=06f7aebe3ff458d24ee6914ac417fdf587960281db99da3f9f703fc6ce4d27b0)
       '@vitest/browser':
         specifier: ^3.2.4
