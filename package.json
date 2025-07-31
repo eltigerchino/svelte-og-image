@@ -39,9 +39,11 @@
 			"svelte": "./dist/index.js"
 		}
 	},
+	"dependencies": {
+		"@vercel/og": "~0.7.2",
+		"satori-html": "^0.3.2"
+	},
 	"peerDependencies": {
-		"@vercel/og": "^0.7.0",
-		"satori-html": "^0.3.2",
 		"svelte": "^5.0.0"
 	},
 	"devDependencies": {
