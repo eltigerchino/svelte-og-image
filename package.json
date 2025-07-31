@@ -41,6 +41,7 @@
 	},
 	"dependencies": {
 		"@vercel/og": "~0.7.2",
+		"esm-env": "^1.2.2",
 		"satori-html": "^0.3.2"
 	},
 	"peerDependencies": {
