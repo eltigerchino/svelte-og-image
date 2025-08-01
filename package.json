@@ -1,6 +1,6 @@
 {
 	"name": "svelte-og-image",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"license": "MIT",
 	"author": {
 		"name": "Chew Tee Ming",
@@ -40,8 +40,9 @@
 		}
 	},
 	"dependencies": {
-		"@vercel/og": "~0.7.2",
+		"@resvg/resvg-js": "^2.6.2",
 		"esm-env": "^1.2.2",
+		"satori": "^0.16.2",
 		"satori-html": "^0.3.2"
 	},
 	"peerDependencies": {
@@ -90,10 +91,7 @@
 	"pnpm": {
 		"onlyBuiltDependencies": [
 			"esbuild"
-		],
-		"patchedDependencies": {
-			"@vercel/og": "patches/@vercel__og.patch"
-		}
+		]
 	},
 	"packageManager": "pnpm@10.14.0"
 }

@@ -1,6 +1,6 @@
 # svelte-og-image
 
-A simple wrapper around [`@vercel/og`](https://www.npmjs.com/package/@vercel/og) for use in [Svelte](https://svelte.dev) projects. Just import your Svelte component and pass in values to its props.
+Generate an OG image using your Svelte component.
 
 ## Installation
 
@@ -14,29 +14,28 @@ If you're using [SvelteKit](https://kit.svelte.dev), create an API route that ex
 
 ```js
 // src/routes/og/+server.js
+import { read } from '$app/server';
 import { ImageResponse } from 'svelte-og-image';
 import Card from './Card.svelte';
-import font from './overpass-v13-latin-600.ttf';
-import { read } from '$app/server';
+import font from './Overpass-SemiBold.ttf';
 
-export async function GET({ url }) {
-  const fontData = await read(font).arrayBuffer();
-	
-  return new ImageResponse(
-    Card,
-    { title: 'hello world!' },
-    {
-      // always specify at least one font
-      fonts: [
-        {
-          name: 'Overpass',
-          data: fontData,
-          weight: 600,
-          style: 'normal'
-        }
-      ]
-    }
-  );
+const fontData = await read(font).arrayBuffer();
+
+export async function GET() {
+	return new ImageResponse(
+		Card,
+		{ title: 'Hello world!' },
+		{
+			fonts: [
+				{
+					name: 'Overpass',
+					data: fontData,
+					style: 'normal',
+					weight: 600
+				}
+			]
+		}
+	);
 }
 ```
 
@@ -46,7 +45,10 @@ export async function GET({ url }) {
 
 ## Acknowledgements
 
+Implementation taken from [svelte.dev](https://github.com/sveltejs/svelte.dev/blob/d66890a231e506a2f927125f0cdf7c77a4310653/apps/svelte.dev/src/routes/blog/%5Bslug%5D/card.png/%2Bserver.ts#L4).
+
 A special thanks to [Geoff Rich](https://geoffrich.net) for breaking this down in his excellent [blog post](https://geoffrich.net/posts/svelte-social-image/). Many of his blog posts have helped me when I first started learning Svelte in 2022 for my studies.
 
-* [satori-html](https://github.com/natemoo-re/satori-html)
-* [satori](https://github.com/vercel/satori)
+- [satori-html](https://github.com/natemoo-re/satori-html)
+- [satori](https://github.com/vercel/satori)
+- [@resvg/resvg-js](https://github.com/thx/resvg-js)
